@@ -5,6 +5,9 @@
 .project
 .settings
 
+#Maven Files#
+target/**/*
+
 # Package Files #
 *.jar
 *.war

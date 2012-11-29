@@ -6,7 +6,7 @@
 .settings
 
 #Maven Files#
-target/**/*
+jds/target/**/*
 
 # Package Files #
 *.jar

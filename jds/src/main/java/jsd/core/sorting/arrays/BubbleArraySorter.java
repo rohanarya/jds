@@ -3,7 +3,7 @@ package jsd.core.sorting.arrays;
 /**
  * @author R.Arya
  * @version $Id$
- * @since 0.7.5
+ * @since 0.0.1
  */
 public class BubbleArraySorter<T extends Comparable<T>> {
 

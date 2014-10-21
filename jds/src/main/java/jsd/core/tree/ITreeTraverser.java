@@ -5,6 +5,8 @@ package jsd.core.tree;
  * @version $Id$
  * @since 0.1.1
  */
-public class ITreeTraverser {
+public interface ITreeTraverser<T> {
+
+    void traverse(ITreeNode<T> treeNode);
 
 }

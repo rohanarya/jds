@@ -37,6 +37,13 @@ public class DiameterOfTree<T> {
 		return Math.max(leftDepth, rightDepth) + 1;
 	}
 
+	/**
+	 * Just a holder to maintain the state of daimeter across the recursive
+	 * stack.
+	 * 
+	 * @author rohanarya
+	 * 
+	 */
 	public static class IntHolder {
 
 		private Integer diameter;

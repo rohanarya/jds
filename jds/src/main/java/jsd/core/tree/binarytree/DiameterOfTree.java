@@ -1,6 +1,6 @@
 package jsd.core.tree.binarytree;
 
-import jsd.core.tree.TreeNode;
+import jsd.core.tree.ITreeNode;
 
 /**
  * Amazon question - Calculates the daimeter of a tree which is basically the
@@ -18,7 +18,40 @@ import jsd.core.tree.TreeNode;
  */
 public class DiameterOfTree<T> {
 
-	public int diameter(TreeNode<T> root) {
-		return 0;
+	public int calculateHieghtAndUpdateDiameter(ITreeNode<T> root,
+			IntHolder diameter) {
+		int leftDepth = 0, rightDepth = 0;
+		if (root == null) {
+			return 0;
+		}
+		if (root.getLeft() != null) {
+			leftDepth = calculateHieghtAndUpdateDiameter(root.getLeft(),
+					diameter);
+		}
+		if (root.getRight() != null) {
+			rightDepth = calculateHieghtAndUpdateDiameter(root.getRight(),
+					diameter);
+		}
+		diameter.setDiameter(Math.max(diameter.getDiameter(), rightDepth
+				+ leftDepth + 1));
+		return Math.max(leftDepth, rightDepth) + 1;
+	}
+
+	public static class IntHolder {
+
+		private Integer diameter;
+
+		public IntHolder() {
+			diameter = Integer.valueOf(0);
+		}
+
+		public Integer getDiameter() {
+			return diameter;
+		}
+
+		public void setDiameter(Integer diameter) {
+			this.diameter = diameter;
+		}
+
 	}
 }
